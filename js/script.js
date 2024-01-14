@@ -1,20 +1,21 @@
+//Saluda al usuiario por medio de los 2 parametros asignados
 function saludar(nombre, entregable) {
     alert(
         "Hola, mi nombre es " + nombre + " y este es mi Entregable n° " + entregable
     );
 }
-
+//Aviso de la version de la calculadora
 function aviso() {
     alert("Prueba mi calculadora 0.1");
 }
-
+//Despide al Usuario
 function despedida() {
     alert("Gracias!. Todos los resultados estaran en la consola!");
 }
 
 function calcular() {
     while (true) {
-        let numA = parseFloat(prompt("Ingrese el primer número."));
+        let numA = parseFloat(prompt("Ingrese el primer número.")); //Parceamos 'numA' para que el usuario no ingrese datos String
 
         let operacion = prompt("Elige la operacion deseada,  +,  -,  /, o  * .");
 
@@ -22,12 +23,12 @@ function calcular() {
 
         let resultado = 0;
 
-        if (!isNaN(numA) && !isNaN(numB))
+        if (!isNaN(numA) && !isNaN(numB))//Si numA y numB son numeros se activa el switch
             switch (operacion) {
                 case "+":
                     resultado = numA + numB;
                     alert(numA + "+" + numB + "=" + resultado);
-                    resultados.push(resultado);
+                    resultados.push(resultado);//Se pushea el resultado al array resultados, para poder guardarlos
                     break;
                 case "-":
                     resultado = numA - numB;
@@ -55,7 +56,7 @@ function calcular() {
         let abandonar = confirm("Desea abandonar la calculadora?");
 
         if (abandonar) {
-            break;
+            break; //Si el usuario abandona se acaba el ciclo
         }
     }
 }
